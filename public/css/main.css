@@ -35,10 +35,12 @@ body {
 }
 
 .selected-header {
-  width: 100%;
+  width: 0;
   height: 0.2rem;
   background-color: #228aa2;
   position: absolute;
+  left: 0;
+  transition: 0.3s width ease-in, 0.3s left cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .ripple {

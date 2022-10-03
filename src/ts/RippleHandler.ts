@@ -1,4 +1,4 @@
-import { Ripple } from "./Ripple";
+import { Ripple } from './Ripple';
 
 export class RippleHandler {
     private _ripples: HTMLElement[];
@@ -9,7 +9,7 @@ export class RippleHandler {
         this._ripples = v;
     }
 
-    private _lastRipple : Ripple = <Ripple>{};
+    private _lastRipple: Ripple = <Ripple>{};
 
     constructor() {
         this._ripples = [];
@@ -34,18 +34,23 @@ export class RippleHandler {
                 const finalx: number = x - elemLongestSide / 2;
                 const finaly: number = y - elemLongestSide / 2;
 
-                const ripple : Ripple = new Ripple("#e3d2ff", finalx, finaly, elemLongestSide, 0.5);
+                const ripple: Ripple = new Ripple(
+                    '#e3d2ff',
+                    finalx,
+                    finaly,
+                    elemLongestSide,
+                    0.3,
+                );
                 this._lastRipple = ripple;
                 ripple.Spawn(element);
-
             });
-            element.addEventListener("mouseup", () => {
+            element.addEventListener('mouseup', () => {
                 if (!this._lastRipple.canDisappear) {
                     this._lastRipple.runAfterAnim();
-                    return
+                    return;
                 }
                 this._lastRipple.Disappear();
-            })
+            });
         });
     }
 }

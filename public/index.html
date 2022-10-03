@@ -5,10 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="/dist/index.js"></script>
-    <title>TODO app</title>
     <link rel="stylesheet" href="./css/main.css">
+    <title>TODO app</title>
 </head>
 <body>
-    
+    <div class="container">
+        <header class="header sticky even-columns">
+            <div class="header-element selectable ripple">
+                <div class="selected-header"></div>
+                <p class="header-text no-margin">All</p>
+            </div>
+            <div class="header-element selectable ripple">
+                <p class="header-text no-margin">Todo</p>
+            </div>
+            <div class="header-element selectable ripple">
+                <p class="header-text no-margin">Finished</p>
+            </div>
+        </header>
+    </div>
 </body>
 </html>

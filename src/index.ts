@@ -1,6 +1,4 @@
-class Main {
-    public static main(): void {}
-}
+import { Main } from './ts/Main';
 
 Main.main();
 

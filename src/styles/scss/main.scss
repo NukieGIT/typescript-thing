@@ -2,12 +2,112 @@
 *::after,
 *::before {
     box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     margin: 0;
     padding: 0;
+}
+
+$main: #e3d2ff;
+$secondary: #d7eff7;
+$deco: #228aa2;
+$white: #ffffff;
+$black: #000000;
+$gray: #525151;
+
+$selected-header-height: 0.2rem;
+
+.container {
     width: 100vw;
     height: 100vh;
-    background-color: azure;
+    background-color: $white;
+}
+
+.header {
+    width: 100%;
+    height: 5rem;
+    border-bottom: 0.1rem solid $gray;
+    position: relative;
+
+    .header-element {
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        height: 100%;
+    }
+}
+
+.header-text {
+    color: $black;
+    font-size: 2rem;
+}
+
+.selected-header {
+    width: 100%;
+    height: $selected-header-height;
+    background-color: $deco;
+    position: absolute;
+}
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+}
+
+.even-columns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-children {
+    display: grid;
+    place-items: center;
+}
+
+.even-columns > * {
+    flex-basis: 100%;
+}
+
+.grid-ish {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid-ish > * {
+    flex: 1 1 10em;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
+.hr {
+    width: 90%;
+    margin: 0 auto;
+    height: 0.2rem;
+    background-color: $gray;
+}
+
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+    }
 }
